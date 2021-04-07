@@ -1,0 +1,64 @@
+<!--
+<<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favourate quote</title>
+  </head>
+  <body>
+    <h1> Hello Folks</h1>
+    {% if inp %}
+      <h2> {{inp}}</h2>
+    {% else %}
+      <h2>This variable not found</h2>
+    {% endif %}
+   <h3> My Favourite fruits are:</h3>
+   <ul>
+     {% for x in fruits %}
+     <li>
+       {{x}}
+     </li>
+     {% endfor %}
+     </ul>
+
+  </body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Favourate Quotes</title>
+    <!--Bootstap core CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css') }}" >
+  </head>
+  <body>
+
+    <nav style="margin-top:25px;margin-left:45px">
+      <a class="btn btn-primary" href="{{ url_for('quotes') }}"> Add a quote</a>
+    </nav>
+
+    <br>
+
+    <div class ="container theme-showcase" role="main">
+
+      <div style="color:#fff; background-color: orange",class="jumbotron">
+        <h1> Favourate quotes</h1>
+      </div>
+
+      <!--for loop starts-->
+
+      <div style="color:#fff; background-color: yellow">
+        <h1> {{r.author}}</h1>
+      </div>
+      <div style="color:#fff;font-size: 28px;background-color: green">
+        <p>{{r.quote}} </p>
+      </div>
+      {% endfor %}
+    <!--for loop end-->
+  </div> <!--container-->
+
+  </body>
+</html>
